@@ -21,3 +21,24 @@
 // Isso requer a manipulação de objetos e a filtragem de arrays com base em propriedades específicas.
 
 // Esses exercícios ajudarão a aprimorar suas habilidades de manipulação de dados e objetos em JavaScript.
+
+let teste = [
+  { nome: "Alice", idade: 25 },
+  { nome: "Bob", idade: 30 },
+  { nome: "Lie", idade: 20 },
+  { nome: "Char", idade: 40 },
+  { nome: "Max", idade: 23 },
+  { nome: "Bob", idade: 9 },
+  { nome: "Rod", idade: 90 },
+  { nome: "Live", idade: 50 },
+];
+
+function filterAge(array, age) {
+  array.map((person) => {
+    if (person.idade >= age) {
+      return console.log(person);
+    }
+  });
+}
+
+filterAge(teste, 25);
