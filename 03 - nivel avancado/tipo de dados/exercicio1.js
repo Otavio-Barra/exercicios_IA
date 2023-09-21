@@ -9,17 +9,49 @@
 
 // Por exemplo, as regras de validação podem ser definidas assim:
 
-// const regrasDeValidacao = {
-//   nome: (valor) => valor.length >= 3,
-//   email: (valor) => /\S+@\S+\.\S+/.test(valor),
-//   idade: (valor) => parseInt(valor) >= 18,
-// };
+const rulesValidation = {
+  name: (value) => value.length >= 3,
+  email: (value) => /\S+@\S+\.\S+/.test(value),
+  age: (value) => parseInt(value) >= 18,
+};
 
 // E o objeto de dados pode ser algo como:
 
-// const dadosDoFormulario = {
-//   nome: 'João',
-//   email: 'joao@email.com',
-//   idade: '25',
-// };
+const person1 = {
+  name: "Joao",
+  email: "joao@email.com",
+  age: "25",
+};
+const person2 = {
+  name: "maria",
+  email: "maria@email.com",
+  age: "05",
+};
+
 // A função de validação deve ser capaz de verificar se os dados do formulário atendem às regras de validação.
+
+function validation(person, rulesValidation) {
+  let invalidField = [];
+
+  for (const key in rulesValidation) {
+    if (rulesValidation.hasOwnProperty(key)) {
+      let rulesResult = rulesValidation[key];
+
+      if (!rulesResult(person[key])) {
+        invalidField.push(key);
+      }
+    }
+  }
+
+  if (invalidField.length === 0) {
+    return true;
+  } else {
+    return {
+      sucesso: false,
+      invalidFiel: invalidField,
+    };
+  }
+}
+
+console.log(validation(person1, rulesValidation));
+console.log(validation(person2, rulesValidation));
