@@ -34,11 +34,9 @@ let teste = [
 ];
 
 function filterAge(array, age) {
-  array.map((person) => {
-    if (person.idade >= age) {
-      return console.log(person);
-    }
-  });
+  let filter = array.filter((array) => array.idade >= age);
+  console.log(filter);
 }
 
 filterAge(teste, 25);
+filterAge(teste, 40);
