@@ -1,0 +1,54 @@
+{
+  "produtos": [
+    {
+      "nome": "leite",
+      "preco": 2.49,
+      "quantidade": 50
+    },
+    {
+      "nome": "pao",
+      "preco": 1.99,
+      "quantidade": 100
+    },
+    {
+      "nome": "arroz",
+      "preco": 3.99,
+      "quantidade": 75
+    },
+    {
+      "nome": "feijão",
+      "preco": 2.89,
+      "quantidade": 60
+    },
+    {
+      "nome": "macarrão",
+      "preco": 1.79,
+      "quantidade": 80
+    },
+    {
+      "nome": "sabonete",
+      "preco": 0.99,
+      "quantidade": 120
+    },
+    {
+      "nome": "detergente",
+      "preco": 1.29,
+      "quantidade": 90
+    },
+    {
+      "nome": "shampoo",
+      "preco": 3.49,
+      "quantidade": 40
+    },
+    {
+      "nome": "creme Dental",
+      "preco": 2.19,
+      "quantidade": 60
+    },
+    {
+      "nome": "cerveja",
+      "preco": 4.99,
+      "quantidade": 24
+    }
+  ]
+}
