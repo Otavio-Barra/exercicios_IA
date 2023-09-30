@@ -12,17 +12,17 @@
 
 const filePath = "products.json";
 
-async function puxaDados() {
+async function getData() {
   try {
     const response = await fetch(filePath);
     const data = await response.json();
-    const produto = data.produtos;
+    const product = data.produtos;
 
     if (data.erro) {
       console.log("erro");
       return null;
     }
-    return produto;
+    return product;
   } catch (err) {
     console.error("Erro na requisição", err);
     return null;
@@ -31,23 +31,18 @@ async function puxaDados() {
 
 async function filterData(key, valueKey) {
   try {
-    let produtos = await puxaDados();
+    let product = await getData();
 
-    if (!produtos) {
+    if (!product) {
       console.log("produtos nao disponiveis");
       return;
     }
-    let filteProduct;
 
-    if (typeof valueKey == "string") {
-      filteProduct = produtos.filter((product) => {
-        return product[key] === valueKey;
-      });
-    } else if (typeof valueKey == "number") {
-      filteProduct = produtos.filter((product) => {
-        return product[key] >= valueKey;
-      });
-    }
+    let filteProduct = typeof valueKey == "string" ? product.filter((product) => {
+      return product[key] === valueKey;
+    }) : product.filter((product) => {
+      return product[key] >= valueKey;
+    });
     console.log(filteProduct);
   } catch (error) {
     console.error("Erro no filtro de dados:", error);
@@ -55,4 +50,7 @@ async function filterData(key, valueKey) {
 }
 
 filterData("preco", 3);
+filterData("preco", 2);
 filterData("nome", "pao");
+filterData("nome", "cerveja");
+

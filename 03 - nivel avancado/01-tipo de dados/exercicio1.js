@@ -34,6 +34,7 @@ function validation(person, rulesValidation) {
   let invalidField = [];
 
   for (const key in rulesValidation) {
+
     if (rulesValidation.hasOwnProperty(key)) {
       let rulesResult = rulesValidation[key];
 

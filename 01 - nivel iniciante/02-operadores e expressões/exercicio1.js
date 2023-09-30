@@ -7,4 +7,17 @@
 // Multiplica os dois números.
 // Divide o primeiro número pelo segundo número.
 // Calcula o resto da divisão do primeiro número pelo segundo número.
-const prompt = require("prompt-sync")();
+
+
+
+function calc(numA, numB) {
+    let sum = numA + numB
+    let subtract = numB - numA
+    let mult = numA * numB
+    let division = numA / numB
+    let rest = numA % numB
+    console.log(sum, subtract, mult, division, rest)
+
+}
+
+calc(4, 6)
