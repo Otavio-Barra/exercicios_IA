@@ -3,9 +3,7 @@
 // matemática aleatória com operadores e números aleatórios, e o jogador deve adivinhar
 // o resultado correto. O programa deve informar se a resposta do jogador está correta ou não.
 
-function divination(number) {
-
-}
+const prompt = require('prompt-sync')();
 
 let menu
 let contador = 5
@@ -15,15 +13,15 @@ do {
     menu = Number(prompt(`Digite um numero de 0 a 15 para ver se e o correto\ntentativas restantes ${contador}`))
     contador--
     if (menu === randomNumber) {
-        alert("parabens voce acertou recarregue a pagina e comece de novo")
+        console.log("parabens voce acertou recarregue a pagina e comece de novo")
         break
     }
     if (menu < 0 || menu > 15) {
-        alert("ai n meu chapa, de 0 a 15 so")
+        console.log("ai n meu chapa, de 0 a 15 so")
         contador++
     }
     if (contador === 0) {
-        alert("vish vc esgotou suas chances, n fique triste recarregue a pagina e tente de novo")
+        console.log("vish vc esgotou suas chances, n fique triste recarregue a pagina e tente de novo")
         break
     }
 } while (true);
