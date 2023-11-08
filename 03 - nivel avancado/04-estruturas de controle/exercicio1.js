@@ -15,9 +15,12 @@ const questions = [
 ];
 
 
+
+
 function askQuestion() {
     let points = 0
     for (const question of questions) {
+
         const response = prompt(question.question)
         if (response.toLowerCase() === question.response.toLocaleLowerCase()) {
             console.log(`sua resposta foi correta, pontos ganhos: ${question.value}`);
